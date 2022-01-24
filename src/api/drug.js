@@ -1,11 +1,11 @@
 import axios from 'utils/axios'
 
 export const getAll = async () => {
-  return axios.get('/drugs')
+  return await axios.get('/drugs')
 }
 
 export const findByNameOrDisease = async ({ query }) => {
-  return axios.get('/drugs/search', {
+  return await axios.get('/drugs/search', {
     params: { query }
   })
 }
