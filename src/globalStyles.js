@@ -2,12 +2,11 @@ import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles({
   root: {
+    margin: '0 auto',
+    minWidth: 500,
     width: '100%',
-    display: 'flex',
-    flexDirection: 'row',
-  },
-  searchBtn: {
-    marginLeft: 10,
+    maxWidth: 800,
+    padding: 10,
   },
 });
 
