@@ -5,7 +5,7 @@ export const getAll = async () => {
 }
 
 export const findByNameOrDisease = async ({ query }) => {
-  return await axios.get('/drugs/search', {
+  return await axios.get('/drugs', {
     params: { query }
   })
 }
