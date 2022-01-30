@@ -1,25 +1,18 @@
-import { useCallback, useMemo, useState } from 'react';
-import { Input, Button } from 'antd';
+import { useMemo } from 'react';
+import { Input } from 'antd';
 import useStyles from './styles';
 import debounce from 'lodash.debounce';
 
-const SearchBar = ({ onSearch }) => {
+const SearchBar = ({ onChange }) => {
 	const classes = useStyles();
 
-	const [query, setQuery] = useState(undefined)
-
-	const handleSearchClick = () => {
-		onSearch({ query })
-	}
-
 	const handleInputOnChange = (event) => {
-		setQuery(event.target.value)
-		onSearch({ query })
-	}
+		onChange(event.target.value)
+	};
 
-	const debouncedChangeHandler = useMemo(
-		() => debounce(handleInputOnChange, 1000)
-	)
+	const debouncedHandleSearch = useMemo(
+		() => debounce(handleInputOnChange, 500)
+	);
 
 	return (
 		<>
@@ -27,11 +20,8 @@ const SearchBar = ({ onSearch }) => {
 			<div className={classes.root}>
 				<Input
 					placeholder="You can search by drug name or by disease..."
-					onChange={debouncedChangeHandler}
+					onChange={debouncedHandleSearch}
 				/>
-				<div className={classes.searchBtn}>
-					<Button onClick={handleSearchClick}>Search</Button>
-				</div>
 			</div>
 		</>
 	);
