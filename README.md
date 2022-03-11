@@ -1,6 +1,6 @@
 # Usage
 
-Navigate to eren-drug-app.netlify.app for demo
+Navigate to [eren-drug-app.netlify.app](https://eren-drug-app.netlify.app) for demo
 
 # Getting Started with Create React App
 
