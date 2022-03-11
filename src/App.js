@@ -3,6 +3,7 @@ import { useQuery } from 'react-query';
 import { Spin } from 'antd';
 import * as DrugApi from 'api/drug';
 import { DrugItem, Header, SearchBar } from './components';
+import { Helmet } from 'react-helmet';
 import useStyles from './globalStyles';
 import './App.css';
 
@@ -20,6 +21,9 @@ const App = () => {
 
   return (
     <div className={classes.root}>
+      <Helmet>
+        <title>Drug Search</title>
+      </Helmet>
       <Header />
       <SearchBar onChange={handleSearchChange} />
       {isLoading && <div style={{ padding: 50 }}><center><Spin size='large' /></center></div>}
